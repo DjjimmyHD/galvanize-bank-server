@@ -5,6 +5,6 @@ module.exports = {
   },
   production: {
     client: 'pg',
-    connection: 'postgresql:///galvanize_bank'
+    connection: process.env.DATABASE_URL + '?ssl=true'
   }
 }
