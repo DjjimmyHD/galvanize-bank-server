@@ -1,11 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const users = require('../../queries/users.js')
+const accounts = require('../../queries/accounts.js')
 
 router.get('/', (req, res, next) => {
-  users.getAllUsers()
-    .then(users => res.json({ users }))
+  accounts.getAllAccounts()
+    .then(accounts => res.json({ accounts }))
     .catch(next)
 })
-
 module.exports = router
