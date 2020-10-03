@@ -11,7 +11,7 @@ const bodyParser = require('body-parser')
 app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(serveStatic('public', { 'main': ['main.css', 'main.css'] }))
+app.use(serveStatic('public', { main: ['main.css', 'main.css'] }))
 
 app.use('/users', users)
 app.use('/accounts', accounts)
@@ -19,7 +19,7 @@ app.use('/transactions', transactions)
 
 app.get('*', (req, res, next) => {
   res.sendFile('404.html', {
-    root: '/Users/james.schultz/block-three/galvanizeBankBE/public/'
+    root: '/Users/jmoney/sandbox/galvanize-bank-server/public/'
   })
 })
 
