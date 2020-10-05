@@ -8,4 +8,10 @@ router.get('/', (req, res, next) => {
     .catch(next)
 })
 
+router.get('/:id', (req, res, next) => {
+  users.getOneUser(req.params.id).then(users => {
+    res.json({ users })
+  })
+})
+
 module.exports = router
