@@ -13,5 +13,21 @@ router.get('/:id', (req, res, next) => {
     res.json({ users })
   })
 })
+router.put('/:id', (req, res, next) => {
+  users.updateUser(req.params.id, req.body).then(users => {
+    res.json({ users })
+  })
+})
+router.delete('/:id', (req, res, next) => {
+  users.deleteUser(req.params.id).then(users => {
+    res.json({ users })
+  })
+})
+
+router.post('/', (req, res, next) => {
+  users.createUser(req.body).then(users => {
+    res.json({ users })
+  })
+})
 
 module.exports = router

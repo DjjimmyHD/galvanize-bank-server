@@ -7,8 +7,26 @@ const getOneUser = (id) => {
     .from('users')
     .where('id', id)
 }
-
+const createUser = (newUser) => {
+  return db('users')
+    .insert(newUser)
+    .returning('*')
+}
+const updateUser = (id, editUser) => {
+  return db('users')
+    .returning('*')
+    .update(editUser)
+    .where('id', id)
+}
+const deleteUser = (id) => {
+  return db('users')
+    .where('id', id)
+    .del()
+}
 module.exports = {
   getAllUsers,
-  getOneUser
+  getOneUser,
+  createUser,
+  updateUser,
+  deleteUser
 }
