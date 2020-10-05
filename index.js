@@ -17,11 +17,11 @@ app.use('/users', users)
 app.use('/accounts', accounts)
 app.use('/transactions', transactions)
 
-app.get('*', (req, res, next) => {
-  res.sendFile('404.html', {
-    root: '/Users/jmoney/sandbox/galvanize-bank-server/public/'
-  })
-})
+// app.get('*', (req, res, next) => {
+//   res.sendFile('404.html', {
+//     root: '/Users/jmoney/sandbox/galvanize-bank-server/public/'
+//   })
+// })
 
 app.use((err, req, res, next) => {
   console.error(err.stack)
